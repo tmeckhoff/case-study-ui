@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import * as routes from './routes';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { getAllItems } from '../state/actions';
 
 class App extends Component {
 
