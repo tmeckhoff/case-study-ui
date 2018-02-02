@@ -1,13 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
+import './index.scss';
+import App from './App';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import './index.scss';
-import App from './App';
-import reducer from './state/reducer';
-import { getAllItems } from './state/actions';
+import reducer from './App/components/state/reducer';
 
 const middleware = [ thunk ];
 
@@ -20,14 +19,11 @@ const store = createStore(
   applyMiddleware(...middleware)
 );
 
-store.dispatch(getAllItems());
-
 render(
-      <Provider store={store}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
 );
-
 
  

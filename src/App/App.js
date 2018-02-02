@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
-import * as routes from './routes';
+import CatalogEntry from './components/CatalogEntry';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { getAllItems } from '../state/actions';
 
 class App extends Component {
 
@@ -10,10 +9,10 @@ class App extends Component {
     render() {
             return (
   <div>
-  <h3>myRetail</h3>
+  <h1>myRetail</h1>
     <main>
     <BrowserRouter>
-      <Route exact path="/" component={routes.CatalogEntry} />
+      <Route path="/" component={CatalogEntry} />
       </BrowserRouter>
     </main>
   </div>
@@ -21,5 +20,6 @@ class App extends Component {
 }
 
 }
+
 
 export default App;
