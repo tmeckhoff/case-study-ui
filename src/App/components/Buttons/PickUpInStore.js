@@ -10,8 +10,13 @@ class PickUpInStoreButton extends Component {
   }
 
 render(){
+
+    let style = {
+      marginRight: "5px",
+      marginBottom: "15px"
+  };
   
-   return (<RaisedButton label="PICK UP IN STORE" />
+   return (<RaisedButton backgroundColor="#000000" labelColor="white" style={style} label="PICK UP IN STORE" />
     
         );
 

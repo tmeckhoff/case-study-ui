@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './CatalogEntry.scss';
+import './CatalogEntry.scss';
 import Slider from '../Slider';
 import PropTypes from 'prop-types';
 import { getAllCatalogItems } from '../../state/actions';
@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import itemsData from './item-data.json';
 import AddToCartButton from '../Buttons/AddToCart';
 import PickUpInStoreButton from '../Buttons/PickUpInStore';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+
 
 const mapStateToProps = (state) => {
    return {
@@ -35,14 +37,16 @@ class CatalogEntry extends Component {
 
 render(){
 
+//kept this console.log to show that redux is setup and functioning, even though I'm not using it
 console.log("items from redux " + JSON.stringify(this.props.items));
+
 let title = this.state.itemsJson.title;
 let images = this.state.itemsJson.Images[0].AlternateImages;
 let price = this.state.itemsJson.Offers[0].OfferPrice[0].formattedPriceValue;
 let purchaseCode = this.state.itemsJson.purchasingChannelCode;
 
-  let addToCartButton = null;
-  let pickUpButton = null;
+let addToCartButton = null;
+let pickUpButton = null;
 
     if (purchaseCode == '0') {
       addToCartButton = <AddToCartButton />;
@@ -55,13 +59,19 @@ let purchaseCode = this.state.itemsJson.purchasingChannelCode;
     }
 
    return (
+    <Grid fluid>
     <div>
     <h2>{title}</h2>
-    <h3>{price}</h3>
-    <Slider images={images} />
-    {addToCartButton}
-    {pickUpButton}
+     <Col xs={9} md={3}>
+        <h3>{price}</h3>
+        {pickUpButton}
+         {addToCartButton}
+        </Col>
+        <Col xs={6} md={3}>
+        <Slider images={images} />
+        </Col>
     </div>
+    </Grid>
         );
 
 }

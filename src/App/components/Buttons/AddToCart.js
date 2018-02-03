@@ -10,7 +10,12 @@ class AddToCartButton extends Component {
 
 render(){
 
-   return (<RaisedButton label="ADD TO CART" />
+ let style = {
+      marginRight: "5px",
+      marginBottom: "15px"
+  };
+
+   return (<RaisedButton backgroundColor="#cc0000" labelColor="white" className="addToCart" style={style} label="ADD TO CART" />
     
         );
 
