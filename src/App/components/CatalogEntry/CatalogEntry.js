@@ -1,34 +1,67 @@
 import React, { Component } from 'react';
 import classes from './CatalogEntry.scss';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Slider from '../Slider/Slider';
+import Slider from '../Slider';
 import PropTypes from 'prop-types';
-import { getAllCatalogItems } from '../state/actions';
+import { getAllCatalogItems } from '../../state/actions';
 import { connect } from 'react-redux';
-import items from './item-data.json';
+import itemsData from './item-data.json';
+import AddToCartButton from '../Buttons/AddToCart';
+import PickUpInStoreButton from '../Buttons/PickUpInStore';
 
-const mapStateToProps = state => ({
-    itemsArray: state.itemsReducer[0]
-});
+const mapStateToProps = (state) => {
+   return {
+      items: state.itemsReducer[0]
+   }
+};
 
-const mapDispatchToProps = dispatch => ({
-    getItemsData: dispatch(getAllCatalogItems())
-});
+const mapDispatchToProps = (dispatch) => {
+   return {
+      getItemsData: items => dispatch(getAllCatalogItems())
+   }
+};
 
 class CatalogEntry extends Component {
 
     constructor(props){
         super(props)
         this.state = {
-            itemsArray: items.CatalogEntryView[0]
+            itemsJson: itemsData.CatalogEntryView[0]
         }
     }
 
+    componentWillMount(){
+        this.props.getItemsData();
+    }
+
 render(){
-console.log(JSON.stringify(this.props));
-    console.log("items " + JSON.stringify(this.props.itemsArray));
+
+console.log("items from redux " + JSON.stringify(this.props.items));
+let title = this.state.itemsJson.title;
+let images = this.state.itemsJson.Images[0].AlternateImages;
+let price = this.state.itemsJson.Offers[0].OfferPrice[0].formattedPriceValue;
+let purchaseCode = this.state.itemsJson.purchasingChannelCode;
+
+  let addToCartButton = null;
+  let pickUpButton = null;
+
+    if (purchaseCode == '0') {
+      addToCartButton = <AddToCartButton />;
+      pickUpButton = <PickUpInStoreButton />;
+    }
+    else if(purchaseCode == '1'){
+      addToCartButton = <AddToCartButton />;
+    } else if(purchaseCode == '2'){
+      pickUpButton = <PickUpInStoreButton />;
+    }
+
    return (
-    <div><Slider images={this.state.itemsArray.Images[0].AlternateImages} /></div>
+    <div>
+    <h2>{title}</h2>
+    <h3>{price}</h3>
+    <Slider images={images} />
+    {addToCartButton}
+    {pickUpButton}
+    </div>
         );
 
 }

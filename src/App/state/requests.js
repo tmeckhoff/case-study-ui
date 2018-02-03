@@ -1,4 +1,4 @@
-import items from '../CatalogEntry/item-data.json';
+import items from '../components/CatalogEntry/item-data.json';
 
 const TIMEOUT = 100;
 

@@ -17,9 +17,9 @@ render(){
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: true
+      pauseOnHover: true
     };
-   return (<Slider {...settings}>
+   return (<Slider {...settings} >
                {this.state.imagesArray.map((image, index) => (
                 <div key={index}>
                     <img  src={image.image} />
