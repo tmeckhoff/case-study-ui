@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 import { GET_ITEMS } from './actions';
 
-const itemsReducer = (state = [], action) => {
+const initialState = {
+	items: []
+};
+
+const itemsReducer = (state = initialState.items, action) => {
   switch (action.type) {
     case GET_ITEMS:
       return [ ...state, action.items ]

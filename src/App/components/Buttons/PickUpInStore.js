@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
-class PickUpInStoreButton extends Component {
-	 constructor(props){
-    super(props);
-   this.state = { 
-    
-    };
-  }
+export class PickUpInStoreButton extends Component {
 
 render(){
 

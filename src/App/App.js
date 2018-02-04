@@ -3,12 +3,29 @@ import './App.scss';
 import CatalogEntry from './components/CatalogEntry';
 import { BrowserRouter, Route } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { createLogger } from 'redux-logger';
+import thunk from 'redux-thunk';
+import reducer from './state/reducer';
+
+const middleware = [ thunk ];
+
+if (process.env.NODE_ENV !== 'production') {
+  middleware.push(createLogger());
+}
+
+const store = createStore(
+  reducer,
+  applyMiddleware(...middleware)
+);
 
 class App extends Component {
 
 
     render() {
             return (
+  <Provider store={store}>
   <MuiThemeProvider>
   <div>
   <h1>myRetail</h1>
@@ -19,6 +36,7 @@ class App extends Component {
     </main>
   </div>
   </MuiThemeProvider>
+  </Provider>
 );
 }
 
