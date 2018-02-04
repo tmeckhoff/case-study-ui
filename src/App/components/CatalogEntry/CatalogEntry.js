@@ -31,13 +31,13 @@ export class CatalogEntry extends Component {
         }
     }
 
-    componentWillMount(){
+    componentDidMount(){
         this.props.getItemsData();
     }
 
 render(){
 
-//kept this console.log to show that redux is setup. I'm not using it as this.props.items is undefined on initial load of component
+//kept this console.log to show that redux is setup
 console.log("items from redux " + JSON.stringify(this.props.items));
 
 let title = this.state.itemsJson.title;

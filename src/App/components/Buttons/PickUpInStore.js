@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
-export class PickUpInStoreButton extends Component {
+class PickUpInStoreButton extends Component {
 
 render(){
 
