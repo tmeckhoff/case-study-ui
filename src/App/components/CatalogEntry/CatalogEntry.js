@@ -38,7 +38,7 @@ export class CatalogEntry extends Component {
 render(){
 
 //kept this console.log to show that redux is setup
-console.log("items from redux " + JSON.stringify(this.props.items));
+console.log("items from redux state " + JSON.stringify(this.props.items));
 
 let title = this.state.itemsJson.title;
 let images = this.state.itemsJson.Images[0].AlternateImages;
