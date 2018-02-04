@@ -31,7 +31,7 @@ export class CatalogEntry extends Component {
         }
     }
 
-    componentDidMount(){
+    componentWillMount(){
         this.props.getItemsData();
     }
 
