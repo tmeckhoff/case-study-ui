@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import itemsData from './item-data.json';
 import AddToCartButton from '../Buttons/AddToCart';
 import PickUpInStoreButton from '../Buttons/PickUpInStore';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Col } from 'react-flexbox-grid';
 
 
 const mapStateToProps = (state) => {

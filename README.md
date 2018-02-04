@@ -16,7 +16,7 @@ I chose to use React + Redux for this code challenge, as React is the UI framewo
 
 Design
 
-Per the instructions, this UI has a carousel to scroll through the item images, and displays the item title, price and "pick up in store" and "add to cart" buttons.
+Per the instructions, this UI has a carousel to scroll through the item images, and displays the item title, price and "pick up in store" and "add to cart" buttons. I focused more on functionality and less on visual design.
 
 Tests
 
