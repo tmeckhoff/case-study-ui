@@ -24,4 +24,4 @@ In the App.test.js file you will find tests for the App, Slider and CatalogEntry
 
 Deploying code to live environment
 
-For deploying a UI application to a live environment, one approach I'm most familiar with is serverless-UI using AWS S3 and Cloudfront. I have provided a diagram of that pipeline design in delivery-diagram.png.
+For deploying a UI application to a live environment, one approach I'm most familiar with is serverless-UI using AWS S3 and Cloudfront. I have provided a diagram of that pipeline design in delivery_diagram.png.
