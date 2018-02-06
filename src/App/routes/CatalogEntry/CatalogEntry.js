@@ -4,7 +4,6 @@ import Slider from '../../components/Slider';
 import PropTypes from 'prop-types';
 import { getAllCatalogItems } from '../../state/actions';
 import { connect } from 'react-redux';
-import itemsData from './item-data.json';
 import AddToCartButton from '../../components/Buttons/AddToCart';
 import PickUpInStoreButton from '../../components/Buttons/PickUpInStore';
 import { Grid, Col } from 'react-flexbox-grid';
@@ -12,7 +11,7 @@ import { Grid, Col } from 'react-flexbox-grid';
 
 const mapStateToProps = (state) => {
    return {
-      items: state.itemsReducer[0]
+      items: state.items
    }
 };
 
@@ -27,7 +26,7 @@ export class CatalogEntry extends Component {
     constructor(props){
         super(props)
         this.state = {
-            itemsJson: itemsData.CatalogEntryView[0]
+            itemsJson: this.props.items.CatalogEntryView[0]
         }
     }
 
@@ -36,9 +35,6 @@ export class CatalogEntry extends Component {
     }
 
 render(){
-
-//kept this console.log to show that redux is setup
-console.log("items from redux state " + JSON.stringify(this.props.items));
 
 let title = this.state.itemsJson.title;
 let images = this.state.itemsJson.Images[0].AlternateImages;

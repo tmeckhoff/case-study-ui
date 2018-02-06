@@ -12,11 +12,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Framework
 
-I chose to use React + Redux for this code challenge, as React is the UI framework I'm most familiar and comfortable with. I am familiar with using Redux in preexisting applications but this was my first time implementing it from scratch. Redux is maybe a bit overkill for a local json file but I wanted to challenge myself. I was able to access the local items-data.json file from the state but was having issues with the props.items being undefined in the CatalogEntry component on initial load. I was unable to resolve this in a timely fashion, so I also directly imported the local json file in the component. I kept the Redux implementation and added a console.log to illustrate that it is working.
+I chose to use React + Redux for this code challenge, as React is the UI framework I'm most familiar and comfortable with. I am familiar with using Redux in preexisting applications but this was my first time implementing it from scratch. Redux is maybe a bit overkill for a local json file but I wanted to challenge myself. After some troubleshooting I was able to get Redux fully implemented.
 
 Design
 
-Per the instructions, this UI has a carousel to scroll through the item images, and displays the item title, price and "pick up in store" and "add to cart" buttons.
+Per the instructions, this UI has a carousel to scroll through the item images, and displays the item title, price and "pick up in store" and "add to cart" buttons. Due to the time spent on implementing the functionality and Redux I wasn't able to spend as much time on visual design as I would of liked.
 
 Tests
 

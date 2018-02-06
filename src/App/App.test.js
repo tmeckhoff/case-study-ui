@@ -22,7 +22,7 @@ it('renders Slider without crashing and finds slider', () => {
 });
 
 it('renders Catalog without crashing and finds title and price ', () => {
-  const props = {items: {"items": ["CatalogEntryView"]}, getItemsData: items => getAllCatalogItems() };
+  const props = {items: {"CatalogEntryView": [{Offers: [{OfferPrice: [{formattedPriceValue: "$139.99"}]}], title: "title", Images: ["image1"], purchasingChannelCode: "0"}]}, getItemsData: items => getAllCatalogItems() };
   const wrapper = shallow(<CatalogEntry {...props} />);
   expect(wrapper.find('#title').length).toEqual(1);
   expect(wrapper.find('#price').length).toEqual(1);
