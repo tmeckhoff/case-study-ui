@@ -12,7 +12,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Framework
 
-I chose to use React + Redux for this code challenge, as React is the UI framework I'm most familiar and comfortable with. I am familiar with using Redux in preexisting applications but this was my first time implementing it from scratch. Redux is maybe a bit overkill for a local json file but I wanted to challenge myself. After some troubleshooting I was able to get Redux fully implemented.
+I chose to use React + Redux for this code challenge, as React is the UI framework I'm most familiar and comfortable with. I am familiar with using Redux in preexisting applications but this was my first time implementing it from scratch. Redux is maybe a bit overkill for a local json file but I wanted to challenge myself. And after some troubleshooting I was able to get Redux implemented.
 
 Design
 
