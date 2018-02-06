@@ -7,8 +7,8 @@ const initialState = {
 
 const itemsReducer = (state = initialState.items, action) => {
   switch (action.type) {
-    case GET_ITEMS:
-      return {...state, items: action.items}
+      case GET_ITEMS:
+      return action.items
     default:
       return state
   }
