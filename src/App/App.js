@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import reducer from './state/reducer';
-import items from './routes/CatalogEntry/item-data.json';
 
 const middleware = [ thunk ];
 
@@ -17,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const store = createStore(
-  reducer, {items: items},
+  reducer,
   applyMiddleware(...middleware)
 );
 
