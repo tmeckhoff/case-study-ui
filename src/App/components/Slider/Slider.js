@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Slider.scss';
 import Slider from 'react-slick';
 import NextIcon from '../../../../node_modules/material-ui/svg-icons/image/navigate-next';
 import PrevIcon from '../../../../node_modules/material-ui/svg-icons/image/navigate-before';
