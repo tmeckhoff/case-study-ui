@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import CatalogEntry from './components/CatalogEntry';
+import * as routes from './routes';
 import { BrowserRouter, Route } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { createStore, applyMiddleware } from 'redux';
@@ -31,7 +31,7 @@ class App extends Component {
   <h1>myRetail</h1>
     <main>
     <BrowserRouter>
-      <Route path="/" component={CatalogEntry} />
+      <Route path="/" component={routes.CatalogEntry} />
       </BrowserRouter>
     </main>
   </div>

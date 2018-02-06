@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './CatalogEntry.scss';
-import Slider from '../Slider';
+import Slider from '../../components/Slider';
 import PropTypes from 'prop-types';
 import { getAllCatalogItems } from '../../state/actions';
 import { connect } from 'react-redux';
 import itemsData from './item-data.json';
-import AddToCartButton from '../Buttons/AddToCart';
-import PickUpInStoreButton from '../Buttons/PickUpInStore';
+import AddToCartButton from '../../components/Buttons/AddToCart';
+import PickUpInStoreButton from '../../components/Buttons/PickUpInStore';
 import { Grid, Col } from 'react-flexbox-grid';
 
 

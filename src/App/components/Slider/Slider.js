@@ -24,7 +24,7 @@ render(){
       prevArrow: <PrevIcon style={{ marginLeft: '100px' }} />
     };
 
-   return (<Slider {...settings} >
+   return (<Slider {...settings} id="slider">
                {this.state.imagesArray.map((image, index) => (
                 <div key={index}>
                     <img  src={image.image} />
