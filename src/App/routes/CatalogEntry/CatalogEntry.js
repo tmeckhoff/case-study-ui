@@ -26,7 +26,8 @@ export class CatalogEntry extends Component {
     constructor(props){
         super(props)
         this.state = {
-            itemsJson: this.props.items.CatalogEntryView[0]
+            itemsJson: this.props.items.CatalogEntryView[0],
+            images: []
         }
     }
 
@@ -37,7 +38,10 @@ export class CatalogEntry extends Component {
 render(){
 
 let title = this.state.itemsJson.title;
-let images = this.state.itemsJson.Images[0].AlternateImages;
+this.state.itemsJson.Images[0].AlternateImages.map((image, index) => (
+              this.state.images.push(image)
+                ))
+this.state.images.unshift(this.state.itemsJson.Images[0].PrimaryImage[0]);
 let price = this.state.itemsJson.Offers[0].OfferPrice[0].formattedPriceValue;
 let purchaseCode = this.state.itemsJson.purchasingChannelCode;
 
@@ -64,7 +68,7 @@ let pickUpButton = null;
          {addToCartButton}
       </Col>
         <Col xs={9} md={3}>
-        <Slider images={images} />
+        <Slider images={this.state.images} />
         </Col>
     </div>
     </Grid>
