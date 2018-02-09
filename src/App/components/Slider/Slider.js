@@ -26,7 +26,7 @@ render(){
 
    return (<Slider {...settings} id="slider">
                {this.state.imagesArray.map((image, index) => (
-                <div key={index}>
+                <div style={{ marginTop: '25px' }} key={index}>
                     <img  style={{ height: '100%', width: '100%' }} src={image.image} />
                 </div>
                 ))} 
