@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
    return {
-      getItemsData: items => dispatch(getAllCatalogItems())
+      getItemsData: () => dispatch(getAllCatalogItems())
    }
 };
 
